@@ -22,12 +22,13 @@ class Login extends React.Component {
         //default action for a button in a form will send post request whcih will cause th page to re-render
         // frontend state & backend state are not the same!
         e.preventDefault();
-        this.props.login(this.state)
+        debugger
+        this.props.login(this.state);
     }
 
     render() {
         return (
-            <div className="session-form">
+            <div className="login-form">
                 <h2>Log In</h2>
                 <form>
                     <label>Username:

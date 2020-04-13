@@ -1,3 +1,19 @@
+.logo {
+
+}
+
 .navbar {
-    background-color: royalblue;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.navbar-links {
+    
+}
+
+.navbar-btn {
+    padding: 5px;
 }
