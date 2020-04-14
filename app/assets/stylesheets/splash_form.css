@@ -1,0 +1,58 @@
+.splash-container {
+
+}
+
+.splash-form {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.splash-form-title {
+    
+}
+
+.splash-search {
+    display: flex;
+    flex-direction: row;
+}
+
+.splash-search-label {
+    
+}
+
+.splash-search-title {
+    
+}
+
+.splash-search-input {
+    
+}
+
+.splash-dates-button {
+    
+}
+
+.splash-search-title {
+    
+}
+
+.splash-dates-placeholder {
+    
+}
+
+.splash-guest-button {
+    
+}
+
+.splash-guest-title {
+    
+}
+
+.splash-guest-placeholder {
+
+}
+
+.splash-search-button {
+
+}
