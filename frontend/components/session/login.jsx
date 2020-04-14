@@ -22,37 +22,45 @@ class Login extends React.Component {
         //default action for a button in a form will send post request whcih will cause th page to re-render
         // frontend state & backend state are not the same!
         e.preventDefault();
-        debugger
         this.props.login(this.state);
     }
 
     render() {
         return (
-            <div className="login-form">
-                <h2>Log In</h2>
-                <form>
-                    <label>Username:
-                    <input
-                            type="text"
-                            // if we want prefilled value of information
-                            value={this.state.username}
-                            // jsx/react method, whenever we change value it will call handleinput
-                            // we can think of it as a listener, listens for changes even single char in input field
-                            onChange={this.handleInput('username')}
-                        />
-                    </label>
-                    <label>Password:
-                    <input
-                            type="password"
-                            // value={this.state.password}
-                            // jsx/react method, whenever we change value it will call handleinput
-                            onChange={this.handleInput('password')}
-                        />
-                    </label>
-                    <button onClick={this.handleSubmit}>Log in</button>
-                </form>
-            </div>
-        )
+          <div className="session-form">
+            <h2 className="modal-title">Log In</h2>
+            <form className="modal-form">
+              <label className="modal-textbox-label">
+                Username:
+                <input
+                  type="text"
+                  className="modal-textbox"
+                  // if we want prefilled value of information
+                  value={this.state.username}
+                  // jsx/react method, whenever we change value it will call handleinput
+                  // we can think of it as a listener, listens for changes even single char in input field
+                  onChange={this.handleInput("username")}
+                />
+              </label>
+              <label className="modal-textbox-label">
+                Password:
+                <input
+                  className="modal-textbox"
+                  type="password"
+                  // value={this.state.password}
+                  // jsx/react method, whenever we change value it will call handleinput
+                  onChange={this.handleInput("password")}
+                />
+              </label>
+              <button
+                className="modal-submit-button"
+                onClick={this.handleSubmit}
+              >
+                Log in
+              </button>
+            </form>
+          </div>
+        );
     }
 }
 

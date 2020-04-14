@@ -3,7 +3,6 @@ import React from "react";
 import SignupFormContainer from "../session/signup_container";
 
 function Modal ({ modal, closeModal, removeErrors}){
-    debugger
     if (!modal) {
         return null;
     }

@@ -27,31 +27,40 @@ class Signup extends React.Component {
 
     render(){
         return (
-        <div className="session-form">
-            <h2>Sign Up</h2>
-            <form>
-                <label>Username:
-                    <input 
-                    type="text"
-                    // if we want prefilled value of information
-                    value={this.state.username}
-                    // jsx/react method, whenever we change value it will call handleinput
-                    // we can think of it as a listener, listens for changes even single char in input field
-                    onChange={this.handleInput('username')}
-                    />
-                </label>
-                <label>Password:
-                    <input
-                            type="password"
-                            // value={this.state.password}
-                            // jsx/react method, whenever we change value it will call handleinput
-                            onChange={this.handleInput('password')}
-                        />
-                </label>           
-                <button onClick={this.handleSubmit}>Sign Up</button>     
+          <div className="session-form">
+            <h2 className="modal-title">Sign Up</h2>
+            <form className="modal-form">
+              <label className="modal-textbox-label">
+                Username:
+                <input
+                  className="modal-textbox"
+                  type="text"
+                  // if we want prefilled value of information
+                  value={this.state.username}
+                  // jsx/react method, whenever we change value it will call handleinput
+                  // we can think of it as a listener, listens for changes even single char in input field
+                  onChange={this.handleInput("username")}
+                />
+              </label>
+              <label className="modal-textbox-label">
+                Password:
+                <input
+                  className="modal-textbox"
+                  type="password"
+                  // value={this.state.password}
+                  // jsx/react method, whenever we change value it will call handleinput
+                  onChange={this.handleInput("password")}
+                />
+              </label>
+              <button
+                className="modal-submit-button"
+                onClick={this.handleSubmit}
+              >
+                Sign Up
+              </button>
             </form>
-        </div>
-        )
+          </div>
+        );
     }
 }
 

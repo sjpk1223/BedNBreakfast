@@ -1,0 +1,78 @@
+.modal-background {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-child {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-title {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-form {
+    flex-direction: column;
+    display: flex;
+}
+
+.modal-textbox {
+    width: 80%;
+}
+
+.modal-textbox-label {
+    margin-bottom: 10px;
+}
+
+.session-form {
+    background-color: white;
+    height: 200px;
+    width: 200%;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.modal-submit-button {
+    background: #016ABC;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+    margin-top: 20px;
+    height: 40px;
+}
+
+.modal-submit-button:hover {
+    background: #B9DFFF;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow:none;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
