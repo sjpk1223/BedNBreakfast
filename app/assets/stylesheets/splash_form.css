@@ -47,7 +47,7 @@ font-family: fantasy;
 color: #ffffff;
 border-radius: 100px;
 -moz-border-radius: 100px;
--webkit-border-radius: 100px;
+-webkit-border-radius: 15px;
 border: 1px solid white;
 cursor: pointer;
 box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
@@ -71,7 +71,7 @@ font-family: fantasy;
 color: #ffffff;
 border-radius: 100px;
 -moz-border-radius: 100px;
--webkit-border-radius: 100px;
+-webkit-border-radius: 15px;
 border: 1px solid white;
 cursor: pointer;
 box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
@@ -88,7 +88,7 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
 .splash-search-button {
-padding: 10px 20px 11px !important;
+padding: 10px 35px 11px !important;
 font-size: 18px !important;
 background-color: gray;
 
@@ -96,10 +96,12 @@ font-weight: bold;
 color: #ffffff;
 border-radius: 100px;
 -moz-border-radius: 100px;
--webkit-border-radius: 100px;
+-webkit-border-radius: 15px;
 border: 1px solid white;
 cursor: pointer;
 box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+font-family: fantasy;
+margin-top: 25px;
 }
