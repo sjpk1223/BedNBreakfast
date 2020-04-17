@@ -1,11 +1,4 @@
 import React from "react";
-import "react-dates/initialize";
-import {
-  DateRangePicker,
-  SingleDatePicker,
-  DayPickerRangeController,
-} from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
 // simply view element
 class Splash extends React.Component {
   constructor(props) {
