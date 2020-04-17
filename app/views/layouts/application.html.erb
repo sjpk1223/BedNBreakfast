@@ -2,12 +2,21 @@
 <html>
   <head>
     <title>BedNBreakfast</title>
+    <script type='text/javascript'>
+      window.logo = "<%= image_url('bnblogo.jpg') %>";
+      window.bg = "<%= image_url('bg.jpg') %>";
+    </script>
+
+    <%= favicon_link_tag asset_path('bnblogo.jpg') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <% if current_user %>
     <script>
       window.currentUser = {

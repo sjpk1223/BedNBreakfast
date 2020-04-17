@@ -25,17 +25,17 @@ class Navbar extends React.Component {
       </div>
     ) : (
       <>
-        <button onClick={this.handleSubmit("signup")} className="navbar-btn" >
-          Sign Up
-        </button>
         <button onClick={this.handleSubmit("login")} className="navbar-btn" >
           Log In
+        </button>
+        <button onClick={this.handleSubmit("signup")} className="navbar-btn" >
+          Sign Up
         </button>
       </>
     );
     return (
       <header className="navbar">
-        <h1 className="logo">BedNBreakfast</h1>
+        <img className="logo" src={window.logo} ></img>
         <div className="navbar-links">{display}</div>
       </header>
     );

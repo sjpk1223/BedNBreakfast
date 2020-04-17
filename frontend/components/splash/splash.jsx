@@ -1,13 +1,21 @@
 import React from "react";
+import "react-dates/initialize";
+import {
+  DateRangePicker,
+  SingleDatePicker,
+  DayPickerRangeController,
+} from "react-dates";
+import "react-dates/lib/css/_datepicker.css";
 // simply view element
 class Splash extends React.Component {
   constructor(props) {
     super(props);
     }
-
-  render() {
-    return (
-      <div className="splash-container">
+    
+    render() {
+        return (
+          <div className="splash-container">
+            {/* <img className="bg-img" src={bg.scss}></img> */}
         <div className="splash-form">
           <div className="splash-form-title">
             Search for places or experiences
