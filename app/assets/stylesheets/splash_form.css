@@ -1,21 +1,30 @@
 .splash-container {
-
+    font-family: fantasy;
+    padding-top: 20px;
+    font-weight: bolder;
+    justify-content: center;
+    display: flex;
 }
 
 .splash-form {
-    border: 1px solid black;
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    width: 100%;
+    padding: 13px;
 }
 
 .splash-form-title {
-    
+    padding-bottom: 10px;
+    justify-content: center;
+    display: flex;
 }
 
 .splash-search {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .splash-search-label {
