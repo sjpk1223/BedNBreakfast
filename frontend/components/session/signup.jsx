@@ -25,6 +25,7 @@ class Signup extends React.Component {
         e.preventDefault();
         debugger
         this.props.createNewUser(this.state)
+        .then(() => this.props.history.push('/'))
     }
 
     render(){

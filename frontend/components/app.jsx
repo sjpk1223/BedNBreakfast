@@ -13,11 +13,6 @@ import { AuthRoute, ProtectedRoute, } from '../util/route_utils';
 
 const App = () => (
     <>
-        <header>
-        <Link to='/'>
-            <h1>Benchbnb</h1>
-        </Link>
-        </header>
         <NavbarContainer/>
             <ModalContainer />
             <Route path='/' component={SplashContainer} />

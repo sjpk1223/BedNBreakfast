@@ -35,7 +35,10 @@ class Navbar extends React.Component {
     );
     return (
       <header className="navbar">
+        <Link to='/'>
         <img className="logo" src={window.logo} ></img>
+
+        </Link>
         <div className="navbar-links">{display}</div>
       </header>
     );
