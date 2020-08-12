@@ -24,7 +24,6 @@ class Signup extends React.Component {
         // frontend state & backend state are not the same!
         e.preventDefault();
         this.props.createNewUser(this.state)
-        .then(() => this.props.history.push('/'));
         this.props.closeModal();
     }
 
