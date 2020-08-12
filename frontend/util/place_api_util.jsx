@@ -7,7 +7,7 @@ export const fetchPlaces = (bounds) => {
     })
 }
 
-export const FetchPlace = (placeId) => {
+export const fetchPlace = (placeId) => {
     return $.ajax({
         url: `/api/places/${placeId}`
     })
