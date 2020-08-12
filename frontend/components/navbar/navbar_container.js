@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Navbar from './navbar';
-import { openModal, closeModal } from "../../actions/modal";
+import { openModal, closeModal } from "../../actions/modal_action";
 
-import { logout } from '../../actions/session';
+import { logout } from '../../actions/session_action';
 
 const msp = (state) =>{
-    debugger
     return {
       currentUser: state.session.currentUser,
     };
@@ -18,7 +17,6 @@ const msp = (state) =>{
 // };
 
 const mdp = (dispatch) => {
-    debugger
     return {
   logout: () => dispatch(logout()),
   openModal: (modal) => dispatch(openModal(modal)),

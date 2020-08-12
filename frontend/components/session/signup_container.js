@@ -2,7 +2,7 @@
 // containers job is to connect our components(frontend) to the store
 import {connect} from 'react-redux';
 // import action we need for this container
-import { createNewUser } from '../../actions/session';
+import { createNewUser } from '../../actions/session_action';
 // import our sign up form component
 import Signup from './signup';
 // msp(slices of our state) & mdp(dispatches functions) contains information sent to component through props
