@@ -1,4 +1,4 @@
-import { RECEIVE_PLACES, RECEIVE_PLACE } from "../actions/places_actions";
+import { RECEIVE_PLACES, RECEIVE_PLACE } from "../actions/places_action";
 import merge from 'lodash.merge'; 
 const placesReducer = (state = {}, action) => {
     Object.freeze(state);

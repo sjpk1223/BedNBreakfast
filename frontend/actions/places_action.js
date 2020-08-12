@@ -15,7 +15,7 @@ const receivePlaces = (places) => ({
 })
 
 export const fetchPlace = (placeId) => dispatch => {
-    return placeApiUtil.FetchPlace(placeId)
+    return placeApiUtil.fetchPlace(placeId)
     .then(place => dispatch(receivePlace(place)));
 }
 

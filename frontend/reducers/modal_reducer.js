@@ -1,7 +1,7 @@
 import {
     OPEN_MODAL,
     CLOSE_MODAL
-} from '../actions/modal'
+} from '../actions/modal_action'
 
 const modalReducer = (state = {}, action) => {
     debugger

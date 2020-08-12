@@ -1,7 +1,7 @@
 import {
     RECEIVE_CURRENT_USER,
     RECEIVE_ERRORS
-} from '../actions/session'
+} from '../actions/session_action'
 
 
 const sessionErrorsReducer = (state = [], action) => {
