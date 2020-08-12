@@ -5,11 +5,14 @@ import {connect} from 'react-redux';
 import { createNewUser } from '../../actions/session_action';
 // import our sign up form component
 import Signup from './signup';
+import { closeModal } from '../../actions/modal_action'
+
 // msp(slices of our state) & mdp(dispatches functions) contains information sent to component through props
 const mdp = dispatch => ({
     // createNewUser function that we imported and return
     // input formUser(which we determined in actions)(we get from the form)
     createNewUser: formUser => dispatch(createNewUser(formUser)),
+    closeModal: () => dispatch(closeModal()),
 });
 
 const msp = state => ({

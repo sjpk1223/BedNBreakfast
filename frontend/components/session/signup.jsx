@@ -23,9 +23,9 @@ class Signup extends React.Component {
         //default action for a button in a form will send post request whcih will cause th page to re-render
         // frontend state & backend state are not the same!
         e.preventDefault();
-        debugger
         this.props.createNewUser(this.state)
-        .then(() => this.props.history.push('/'))
+        .then(() => this.props.history.push('/'));
+        this.props.closeModal();
     }
 
     render(){

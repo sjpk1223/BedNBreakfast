@@ -23,6 +23,7 @@ class Login extends React.Component {
         // frontend state & backend state are not the same!
         e.preventDefault();
         this.props.login(this.state);
+        this.props.closeModal();
     }
 
     render() {
