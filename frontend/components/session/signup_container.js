@@ -11,6 +11,10 @@ const mdp = dispatch => ({
     // input formUser(which we determined in actions)(we get from the form)
     createNewUser: formUser => dispatch(createNewUser(formUser)),
 });
+
+const msp = state => ({
+    formtype: 'createNewUser',
+})
 // passing it in sign up component.
 //does not rely on state so we do not need msp
-export default connect(null, mdp)(Signup);
+export default connect(msp, mdp)(Signup);

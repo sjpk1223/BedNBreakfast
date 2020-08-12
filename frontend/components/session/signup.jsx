@@ -8,6 +8,7 @@ class Signup extends React.Component {
             password: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
     // type is key of state, depending on key we will handle the input
     handleInput(type) {
@@ -22,6 +23,7 @@ class Signup extends React.Component {
         //default action for a button in a form will send post request whcih will cause th page to re-render
         // frontend state & backend state are not the same!
         e.preventDefault();
+        debugger
         this.props.createNewUser(this.state)
     }
 
