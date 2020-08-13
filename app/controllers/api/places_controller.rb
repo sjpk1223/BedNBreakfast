@@ -21,7 +21,7 @@ class Api::PlacesController < ApplicationController
     end
 
     def place_params
-        params.require(:place).permit(:name, :user_id, :description, :price, :num_beds, :num_bedrooms, :num_bathrooms, :max_occupancy, :latitude, :longitude)
+        params.require(:place).permit(:title, :lat, :lng, :seating)
     end
 
 end

@@ -1,4 +1,5 @@
 import React from "react";
+import Map from '../map/map';
 // simply view element
 class Splash extends React.Component {
   constructor(props) {
@@ -6,8 +7,14 @@ class Splash extends React.Component {
     }
     
     render() {
-        return (
-          <div className="splash-container">
+      let {places, updateFilter} = this.props;
+      return (
+        <div className="splash-container">
+        <Map
+          places={places}
+          updateFilter={updateFilter}
+        />
+
             {/* <img className="bg-img" src={bg.scss}></img> */}
         <div className="splash-form">
           <div className="splash-form-title">

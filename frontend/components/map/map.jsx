@@ -14,19 +14,22 @@ class Map extends React.Component{
 
     componentDidMount() {
         const mapOptions = {
-            center: { lat: 37, lng: -122},
+            center: { lat: 37.7758, lng: -122.435},
             zoom: 13
         };
-
+        
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map)
 
         if (this.props.singlePlace){
+            
             this.MarkerManager.updateMarkers([this.props.place]);
         } else {
             this.MarkerManager.updateMarkers([this.props.places]);
+            
             this.filterBounds();
         }
+        // 
     }
 
     filterBounds() {
@@ -38,6 +41,7 @@ class Map extends React.Component{
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };
             this.props.updateFilter('bounds', bounds);
+            // 
             this.registerListeners();
         })
     }
@@ -51,6 +55,7 @@ class Map extends React.Component{
     }
 
     registerListeners() {
+
         google.maps.event.addListener(this.map, 'idle', () => {
             const { north, south, east, west } = this.map.getBounds().toJSON();
             const bounds = {
@@ -59,7 +64,7 @@ class Map extends React.Component{
             }
             this.props.updateFilter('bounds', bounds)
         });
-
+        
         google.maps.event.addListener(this.map, 'click', (event) => {
             const coords = getCoordsObj(event.latLng);
             this.handleClick(coords);
@@ -67,9 +72,12 @@ class Map extends React.Component{
     }
 
     componentDidUpdate(){
+        
         if (this.props.singlePlace) {
+            
             this.MarkerManager.updateMarkers([this.props.place])
         } else {
+            
             this.MarkerManager.updateMarkers([this.props.places])
         }
     }

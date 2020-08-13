@@ -1,0 +1,1 @@
+json.extract! place, :id, :lat, :lng, :title, :seating

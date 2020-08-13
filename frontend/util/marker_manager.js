@@ -24,15 +24,18 @@ export default class MarkerManager {
 
     updateMarkers(places) {
         const placesObject = {} ;
+        // empty array is not falsey value
+        if (places.length !== 0 ){
         places.forEach(place => placesObject[place.id] = place )
 
         places
-        .filter(place => !(this.markers[bench.id]))
+        .filter(place => !(this.markers[place.id]))
         .forEach(place => this.createMarker(place, this.handleClick))
 
         Object.values(this.markers)
-        .filter(bench => !placesObject[place.id])
-        .forEach(bench => this.removeMarkers(this.markers[bench.id]))
+        .filter(place => !placesObject[place.id])
+        .forEach(place => this.removeMarkers(this.markers[place.id]))
+        }
     }
 
 }

@@ -2,7 +2,7 @@
 // containers job is to connect our components(frontend) to the store
 import { connect } from "react-redux";
 // import action we need for this container
-
+import { fetchPlaces, updateFilter } from '../../actions/places_action';
 // import our sign up form component
 import Splash from "./splash";
 // msp(slices of our state) & mdp(dispatches functions) contains information sent to component through props
@@ -13,4 +13,13 @@ import Splash from "./splash";
 // });
 // passing it in sign up component.
 //does not rely on state so we do not need msp
-export default connect(null, null)(Splash);
+
+const msp = state => ({
+    places: Object.values(state.entities.places)
+})
+
+const mdp = (dispatch) => ({
+    fetchPlaces: (bounds) => dispatch(fetchPlaces(bounds)),
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+})
+export default connect(msp, mdp)(Splash);

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  lat: 1.5
+  lng: 1.5
+  seating: 1
+
+two:
+  title: MyString
+  lat: 1.5
+  lng: 1.5
+  seating: 1
