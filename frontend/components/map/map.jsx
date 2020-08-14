@@ -10,6 +10,7 @@ const getCoordsObj = latLng => ({
 class Map extends React.Component{
     constructor(props){
         super(props);
+        // this.map must be passed through props or state
     }
 
     componentDidMount() {
@@ -19,6 +20,7 @@ class Map extends React.Component{
         };
         
         this.map = new google.maps.Map(this.mapNode, mapOptions);
+        
         this.MarkerManager = new MarkerManager(this.map)
 
         if (this.props.singlePlace){
@@ -33,15 +35,19 @@ class Map extends React.Component{
     }
 
     filterBounds() {
+        debugger
         this.map.addListener('idle', () => {
+            
             let latLongBnds = this.map.getBounds();
+            
             let northEastLat = latLongBnds.getNorthEast().lat();
             let northEastLng = latLongBnds.getNorthEast().lng();
             let southWestLat = latLongBnds.getSouthWest().lat();
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };
+            
             this.props.updateFilter('bounds', bounds);
-            // 
+            
             this.registerListeners();
         })
     }
