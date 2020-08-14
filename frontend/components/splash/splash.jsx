@@ -1,20 +1,17 @@
 import React from "react";
 import Map from '../map/map';
-// simply view element
+import Index from '../index/index';
+import FilterForm from '../filterform/filterform';
+
 class Splash extends React.Component {
   constructor(props) {
     super(props);
     }
     
     render() {
-      let {places, updateFilter} = this.props;
+      let {places, updateFilter, min_seating, max_seating} = this.props;
       return (
         <div className="splash-container">
-        <Map
-          places={places}
-          updateFilter={updateFilter}
-        />
-
             {/* <img className="bg-img" src={bg.scss}></img> */}
         <div className="splash-form">
           <div className="splash-form-title">
@@ -46,6 +43,18 @@ class Splash extends React.Component {
             </button>
           </div>
         </div>
+          <Map
+            places={places}
+            updateFilter={updateFilter}
+          />
+          <FilterForm
+            min_seating={min_seating}
+            max_seating={max_seating}
+            updateFilter={updateFilter}
+          />
+          <Index
+            places={places}
+          /> 
       </div>
     );
   }

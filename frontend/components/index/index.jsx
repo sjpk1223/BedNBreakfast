@@ -19,7 +19,7 @@ class Index extends React.Component {
                 key={placeId}
             />
         ))
-        const display = PlaceCount > 0 ? (
+        const display = count > 0 ? (
             <div>
                 <h1>Places: </h1>
                 <ul>{Places}</ul>
