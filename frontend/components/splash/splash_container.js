@@ -15,6 +15,8 @@ import Splash from "./splash";
 //does not rely on state so we do not need msp
 
 const msp = state => ({
+    min_seating: state.ui.filters.max_seating,
+    max_seating: state.ui.filters.min_seating,
     places: Object.values(state.entities.places)
 })
 
