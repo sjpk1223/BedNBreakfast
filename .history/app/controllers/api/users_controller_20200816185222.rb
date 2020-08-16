@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-    protect_from_forgery with: :null_session
     def create
         debugger
         @user = User.new(user_params)
