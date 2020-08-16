@@ -3,7 +3,6 @@ import Map from '../map/map';
 import Index from '../index/index';
 import FilterForm from '../filterform/filterform';
 
-
 class Splash extends React.Component {
   constructor(props) {
     super(props);

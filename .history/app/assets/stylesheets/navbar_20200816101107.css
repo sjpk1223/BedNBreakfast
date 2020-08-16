@@ -1,0 +1,42 @@
+/* .logo {
+    width: 240px;
+    height: 200px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid gray;
+    background: white;
+}
+
+.navbar-btn {
+    padding: 5px;
+    font-family: fantasy;
+    font-size: 17px;
+    font-weight: bold; 
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.navbar-links {
+    padding-right: 35px;
+}
+
+.navbar-btn {
+    padding: 10px;   
+    font-size: 21px;
+    background: none;
+    border-width: 5px;
+    border-color: gray;
+    
+}
+
+.navbar-btn:first-child {
+    margin-right: 35px;
+    background: none;
+    border: none;
+    font-size: 21px;
+} */

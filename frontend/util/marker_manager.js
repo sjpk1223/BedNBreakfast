@@ -27,7 +27,6 @@ export default class MarkerManager {
         // empty array is not falsey value
         if (places.length !== 0 ){
         places.forEach(place => placesObject[place.id] = place )
-
         places
         .filter(place => !(this.markers[place.id]))
         .forEach(place => this.createMarker(place, this.handleClick))

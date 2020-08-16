@@ -16,10 +16,10 @@ const App = () => (
     <>
         <NavbarContainer/>
             <ModalContainer />
-            <Route exact path='/' component={SplashContainer} />
+            <Route path='/' component={SplashContainer} />
             <AuthRoute exact path='/signup' component={SignupContainer} />
             <AuthRoute exact path='/login' component={LoginContainer} />
-            <Route exact path='/map' component={Maps}/>
+            <Route path='/map' component={Maps}/>
     </>
 )
 

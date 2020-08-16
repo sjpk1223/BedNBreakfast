@@ -2,7 +2,29 @@ import React from "react";
 import Map from '../map/map';
 import Index from '../index/index';
 import FilterForm from '../filterform/filterform';
+import React from 'react';
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  InfoWindow
+} from '@react-google-maps/api';
+import { formatRelative } from "date-fns";
 
+import usePlacesAutoComplete, {
+  getGeocode,
+  getLatlng,
+} from 'use-places-autocomplete'
+
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from '@reach/combobox'
+
+import "@reach/combobox/style.css"
 
 class Splash extends React.Component {
   constructor(props) {
@@ -44,6 +66,12 @@ class Splash extends React.Component {
             </button>
           </div>
         </div>
+          <GoogleMap
+            mapContainerStyle={mapContainerStyle}
+            zoom={8}
+            center={center}>
+
+          </GoogleMap>
           {/* <Map
             places={places}
             updateFilter={updateFilter}

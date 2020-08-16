@@ -21,21 +21,20 @@ class Map extends React.Component{
         
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         
-        this.MarkerManager = new MarkerManager(this.map)
+        // this.MarkerManager = new MarkerManager(this.map)
 
-        if (this.props.singlePlace){
+        // if (this.props.singlePlace){
             
-            this.MarkerManager.updateMarkers([this.props.place]);
-        } else {
-            this.MarkerManager.updateMarkers([this.props.places]);
+        //     this.MarkerManager.updateMarkers([this.props.place]);
+        // } else {
+        //     this.MarkerManager.updateMarkers([this.props.places]);
             
-            this.filterBounds();
-        }
+        //     this.filterBounds();
+        // }
         // 
     }
 
     filterBounds() {
-        debugger
         this.map.addListener('idle', () => {
             
             let latLongBnds = this.map.getBounds();

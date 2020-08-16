@@ -7,7 +7,6 @@ import LoginContainer from './session/login_container';
 import NavbarContainer from './navbar/navbar_container';
 import SplashContainer from './splash/splash_container';
 import ModalContainer from './modal/modal_container';
-import Maps from '../components/map/googlemap'
 import { AuthRoute, ProtectedRoute, } from '../util/route_utils';
 
 // this is where all containers come together
@@ -16,10 +15,9 @@ const App = () => (
     <>
         <NavbarContainer/>
             <ModalContainer />
-            <Route exact path='/' component={SplashContainer} />
+            <Route path='/' component={SplashContainer} />
             <AuthRoute exact path='/signup' component={SignupContainer} />
             <AuthRoute exact path='/login' component={LoginContainer} />
-            <Route exact path='/map' component={Maps}/>
     </>
 )
 

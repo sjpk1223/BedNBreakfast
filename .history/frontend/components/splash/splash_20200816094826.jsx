@@ -1,8 +1,8 @@
 import React from "react";
 import Map from '../map/map';
+import GoogleMap from '../map/googlemap';
 import Index from '../index/index';
 import FilterForm from '../filterform/filterform';
-
 
 class Splash extends React.Component {
   constructor(props) {
