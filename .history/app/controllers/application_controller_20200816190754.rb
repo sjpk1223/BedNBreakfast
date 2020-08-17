@@ -16,7 +16,6 @@ helper_method :logged_in?, :current_user, :ensure_logged_in
     end
     def logout!
         current_user.reset_session_token!
-        debugger
         session[:session_token] = nil
         @current_user = nil
     end

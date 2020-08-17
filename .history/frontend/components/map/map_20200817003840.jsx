@@ -35,7 +35,6 @@ class Map extends React.Component {
             debugger
             this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
         } else {
-            debugger
             this.MarkerManager.updateMarkers(this.props.places);
             this.filterBounds();
         }
@@ -85,10 +84,8 @@ class Map extends React.Component {
 
     componentDidUpdate() {
         if (this.props.singlePlace) {
-            debugger
             this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
         } else {
-            debugger
             this.MarkerManager.updateMarkers(this.props.places);
         }
     };

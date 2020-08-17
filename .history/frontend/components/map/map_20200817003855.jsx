@@ -88,7 +88,6 @@ class Map extends React.Component {
             debugger
             this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
         } else {
-            debugger
             this.MarkerManager.updateMarkers(this.props.places);
         }
     };

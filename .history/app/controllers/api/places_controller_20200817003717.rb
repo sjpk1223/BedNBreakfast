@@ -4,7 +4,6 @@ class Api::PlacesController < ApplicationController
         @places =  params[:bounds] ? Place.in_bounds(params[:bounds]) : Place.all
         if params[:min_seating] && params[:max_seating]
              @places = @places.where(seating: seating_range)
-        end
     end
 
     render "api/benches/index"

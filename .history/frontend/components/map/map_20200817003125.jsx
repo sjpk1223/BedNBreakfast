@@ -7,7 +7,7 @@ const getCoordsObj = latLng => ({
     lng: latLng.lng()
 });
 
-
+const google = window.google;
 class Map extends React.Component {
     constructor(props) {
         super(props);
@@ -32,10 +32,8 @@ class Map extends React.Component {
         if (this.props.singlePlace) {
 
             // this.props.fetchplace(this.props.match.params.placeId);
-            debugger
             this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
         } else {
-            debugger
             this.MarkerManager.updateMarkers(this.props.places);
             this.filterBounds();
         }
@@ -85,10 +83,8 @@ class Map extends React.Component {
 
     componentDidUpdate() {
         if (this.props.singlePlace) {
-            debugger
             this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
         } else {
-            debugger
             this.MarkerManager.updateMarkers(this.props.places);
         }
     };
