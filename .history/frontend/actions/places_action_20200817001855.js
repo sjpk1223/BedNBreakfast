@@ -3,7 +3,7 @@ import * as placeApiUtil from '../util/place_api_util';
 export const RECEIVE_PLACES = "RECEIVE_PLACES";
 export const RECEIVE_PLACE = "RECEIVE_PLACE";
 export const UPDATE_FILTER = "UPDATE_FILTER";
-export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+
 const receivePlace = (place) => ({
     type: RECEIVE_PLACE,
     place

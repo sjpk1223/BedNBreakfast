@@ -5,50 +5,48 @@ import MarkerManager from '../../util/marker_manager';
 const getCoordsObj = latLng => ({
     lat: latLng.lat(),
     lng: latLng.lng()
-});
+})
 
-class Map extends React.Component {
-    constructor(props) {
+class Map extends React.Component{
+    constructor(props){
         super(props);
-
-
-
+        // this.map must be passed through props or state
     }
 
     componentDidMount() {
-        // set the map to show SF
-
         const mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 }, // this is SF
+            center: { lat: 37.7758, lng: -122.435},
             zoom: 13
         };
-
-        // wrap this.mapNode in a Google Map
+        
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        this.MarkerManager = new MarkerManager(this.map);
-        // Object.values(state.entities.places)
+        
+        // this.MarkerManager = new MarkerManager(this.map)
 
-        if (this.props.singlePlace) {
-
-            // this.props.fetchplace(this.props.match.params.placeId);
-            this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
-        } else {
-            this.MarkerManager.updateMarkers(this.props.places);
-            this.filterBounds();
-        }
-        // idle b/c we want to capture bounds when map is idle NOT bounds changed 
-        // this is where we get our bounds from our front end!
+        // if (this.props.singlePlace){
+            
+        //     this.MarkerManager.updateMarkers([this.props.place]);
+        // } else {
+        //     this.MarkerManager.updateMarkers([this.props.places]);
+            
+        //     this.filterBounds();
+        // }
+        // 
     }
 
     filterBounds() {
         this.map.addListener('idle', () => {
+            
             let latLongBnds = this.map.getBounds();
+            
             let northEastLat = latLongBnds.getNorthEast().lat();
             let northEastLng = latLongBnds.getNorthEast().lng();
             let southWestLat = latLongBnds.getSouthWest().lat();
             let southWestLng = latLongBnds.getSouthWest().lng();
             let bounds = { southWest: { lat: southWestLat, lng: southWestLng }, northEast: { lat: northEastLat, lng: northEastLng } };
+            
             this.props.updateFilter('bounds', bounds);
+            
             this.registerListeners();
         })
     }
@@ -61,40 +59,40 @@ class Map extends React.Component {
         });
     }
 
-
-
-
     registerListeners() {
+
         google.maps.event.addListener(this.map, 'idle', () => {
             const { north, south, east, west } = this.map.getBounds().toJSON();
             const bounds = {
-                northEast: { lat: north, lng: east },
-                southWest: { lat: south, lng: west }
-            };
-            this.props.updateFilter('bounds', bounds);
+                northEast: { lat:north, lng:east},
+                southWest: { lat:south, lng:west}
+            }
+            this.props.updateFilter('bounds', bounds)
         });
-
+        
         google.maps.event.addListener(this.map, 'click', (event) => {
             const coords = getCoordsObj(event.latLng);
             this.handleClick(coords);
-        });
+        })
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(){
+        
         if (this.props.singlePlace) {
-            this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
+            
+            this.MarkerManager.updateMarkers([this.props.place])
         } else {
-            this.MarkerManager.updateMarkers(this.props.places);
+            
+            this.MarkerManager.updateMarkers([this.props.places])
         }
-    };
+    }
 
     render() {
         return (
-            <div id='map-container' ref={map => this.mapNode = map}>
-
-            </div>
+            <div id='map-container' ref={map => this.mapNode = map}></div>
         )
     }
+
 }
 
 export default withRouter(Map);

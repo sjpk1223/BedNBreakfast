@@ -3,7 +3,7 @@ import * as placeApiUtil from '../util/place_api_util';
 export const RECEIVE_PLACES = "RECEIVE_PLACES";
 export const RECEIVE_PLACE = "RECEIVE_PLACE";
 export const UPDATE_FILTER = "UPDATE_FILTER";
-export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+
 const receivePlace = (place) => ({
     type: RECEIVE_PLACE,
     place
@@ -13,20 +13,6 @@ const receivePlaces = (places) => ({
     type: RECEIVE_PLACES,
     places
 })
-
-export const receiveReview = ({ review, rating, author }) => ({
-    type: RECEIVE_BENCH,
-    review,
-    rating,
-    author
-})
-
-export const createReview = review => dispatch => (
-    APIUtil.createReview(review).then(review => (
-        dispatch(receiveReview(review))
-    ))
-);
-
 
 export const fetchPlace = (placeId) => dispatch => {
     return placeApiUtil.fetchPlace(placeId)
@@ -53,4 +39,4 @@ export const updateFilter = (filter, value) => (dispatch, getState) => {
         dispatch(changeFilter(filter, value));
         return fetchPlaces(getState().ui.filters)(dispatch);
         
-};
+});

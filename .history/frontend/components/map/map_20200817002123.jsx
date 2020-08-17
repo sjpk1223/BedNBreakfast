@@ -26,14 +26,14 @@ class Map extends React.Component {
         // wrap this.mapNode in a Google Map
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
-        // Object.values(state.entities.places)
+        // Object.values(state.entities.benches)
 
-        if (this.props.singlePlace) {
+        if (this.props.singleBench) {
 
-            // this.props.fetchplace(this.props.match.params.placeId);
-            this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
+            // this.props.fetchBench(this.props.match.params.benchId);
+            this.MarkerManager.updateMarkers([this.props.bench]); // updateMarkers takes in an array
         } else {
-            this.MarkerManager.updateMarkers(this.props.places);
+            this.MarkerManager.updateMarkers(this.props.benches);
             this.filterBounds();
         }
         // idle b/c we want to capture bounds when map is idle NOT bounds changed 
@@ -56,7 +56,7 @@ class Map extends React.Component {
     handleClick(coords) {
         const { history } = this.props;
         history.push({
-            pathname: "places/new",
+            pathname: "benches/new",
             search: `lat=${coords.lat}&lng=${coords.lng}`
         });
     }
@@ -81,10 +81,10 @@ class Map extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.props.singlePlace) {
-            this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
+        if (this.props.singleBench) {
+            this.MarkerManager.updateMarkers([this.props.bench]); // updateMarkers takes in an array
         } else {
-            this.MarkerManager.updateMarkers(this.props.places);
+            this.MarkerManager.updateMarkers(this.props.benches);
         }
     };
 

@@ -11,11 +11,16 @@ class Api::PlacesController < ApplicationController
 
     def show
         @place = Place.find(params[:id])
+        render :show
     end 
 
     def create
-        @place = Place.create!(place_params)
-       render "api/benches/show"
+        @place = Place.new(place_params)
+        if @place.save
+            render :show
+        else
+            render json: @place, status: :unprocessable_entity
+        end
     end
 
     def place_params
