@@ -86,7 +86,7 @@ class Map extends React.Component {
     componentDidUpdate() {
         if (this.props.singlePlace) {
             debugger
-            this.MarkerManager.updateMarkers([this.props.place]); // updateMarkers takes in an array
+            this.MarkerManager.updateMarkers([this.props.place]); // takes in an array
         } else {
             debugger
             this.MarkerManager.updateMarkers(this.props.places);

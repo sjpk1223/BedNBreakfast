@@ -7,7 +7,7 @@ import LoginContainer from './session/login_container';
 import NavbarContainer from './navbar/navbar_container';
 import SplashContainer from './splash/splash_container';
 import ModalContainer from './modal/modal_container';
-import Maps from '../components/map/map'
+import Maps from '../components/map/googlemap'
 import { AuthRoute, ProtectedRoute, } from '../util/route_utils';
 
 // this is where all containers come together
